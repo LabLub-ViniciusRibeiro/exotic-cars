@@ -2,7 +2,7 @@ import { GridList, Header } from '@Components/index'
 import './App.css'
 import CARS_DATA from '../CARS_DATA.json';
 import CarItem from '@Components/CarItem.tsx';
-import Car from '@Shared/interfaces/Cart';
+import Car from 'shared/interfaces/Cart';
 
 function App() {
 

@@ -10,19 +10,21 @@ const HeaderContainer = styled.header`
     box-sizing: content-box;
     padding: 10px;
     box-sizing: border-box;
-
+    
     & > div {
         display: flex;
         align-items: center;
     }
-
+    
     & > div h1 {
         font-size: 1.6rem;
         font-weight: 600;
         margin-right: 4px;
+        color: ${Colors.titleText};
     }
     & > div h2 {
         font-weight: 400;
+        color: ${Colors.titleText};
     }
 
     img {
@@ -31,8 +33,12 @@ const HeaderContainer = styled.header`
         transition: all 0.2s;
     }
 
+    @media screen and (min-width: 700px) {
+        padding: 20px 10px;
+    }
+
     @media screen and (min-width: 1100px) {
-        padding: 10px 80px;
+        padding: 20px 80px;
     }
 `
 
