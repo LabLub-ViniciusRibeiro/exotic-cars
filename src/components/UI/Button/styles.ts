@@ -1,5 +1,5 @@
 import styled, { CSSProperties } from "styled-components";
-import Colors from "../../../shared/constants/Colors";
+import Colors from "@Shared/Colors";
 
 interface Props {
     hasBorder: boolean,

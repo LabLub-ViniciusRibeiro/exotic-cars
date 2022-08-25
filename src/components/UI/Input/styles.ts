@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Colors from "../../../shared/constants/Colors";
+import Colors from "@Shared/Colors";
 
 const InputContainer = styled.div`
     & > input {

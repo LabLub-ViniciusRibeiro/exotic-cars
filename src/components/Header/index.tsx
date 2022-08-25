@@ -1,9 +1,7 @@
 import { useState } from "react"
 import HeaderContainer, { SvgContainer } from "./styles"
-import filter from '../../assets/filter.svg'
-import Button from "../UI/Button";
-import InputGroup from "./InputGroup";
-import Input from "../UI/Input";
+import filter from '@Assets/filter.svg'
+import { Input, InputGroup, Button } from "@Components/index";
 
 function Header() {
 
