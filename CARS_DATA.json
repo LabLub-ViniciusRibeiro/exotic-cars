@@ -1,0 +1,100 @@
+{
+    "cars": [
+        {
+            "brand":"Ferrari",
+            "model":"California",
+            "rent_price":725.00,
+            "location":"Salvador-BA",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Porsche",
+            "model":"911 Turbo S",
+            "rent_price":725.00,
+            "location":"São Paulo-SP",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Porsche",
+            "model":"911 GT3 RS",
+            "rent_price":825.00,
+            "location":"Campinas-SP",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Bentley",
+            "model":"Continental GT",
+            "rent_price":825.00,
+            "location":"Niterói-RJ",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"BMW",
+            "model":"M1 Competition",
+            "rent_price":825.00,
+            "location":"Salvador-BA",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Alfa Romeo",
+            "model":"4C Spider",
+            "rent_price":825.00,
+            "location":"Petrópolis-RJ",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"McLaren",
+            "model":"P1 GTR",
+            "rent_price":925.00,
+            "location":"Salvador-BA",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Lamborghini",
+            "model":"Aventador",
+            "rent_price":925.00,
+            "location":"São Carlos-SP",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Bugatti",
+            "model":"Veyron Spyder",
+            "rent_price":925.00,
+            "location":"Curitiba-PR",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Chevrolet",
+            "model":"Corvett",
+            "rent_price":925.00,
+            "location":"Salvador-BA",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Rolls-Royce",
+            "model":"Wraith",
+            "rent_price":725.00,
+            "location":"Salvador-BA",
+            "picture":"california-red.png",
+            "color":"red"
+        },
+        {
+            "brand":"Mercedes-Benz",
+            "model":"AMG GTS",
+            "rent_price":725.00,
+            "location":"Salvador-BA",
+            "picture":"california-red.png",
+            "color":"red"
+        }
+    ]
+}
