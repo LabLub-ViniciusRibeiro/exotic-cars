@@ -28,6 +28,7 @@ const HeaderContainer = styled.header`
     img {
         width: 100%;
         filter: invert(79%) sepia(1%) saturate(225%) hue-rotate(40deg) brightness(97%) contrast(102%);
+        transition: all 0.2s;
     }
 `
 
@@ -38,6 +39,10 @@ export const SvgContainer = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    &:hover .filter-icon{
+        filter: invert(56%) sepia(15%) saturate(1779%) hue-rotate(196deg) brightness(97%) contrast(97%);
+    }
 `
 
 export default HeaderContainer;
