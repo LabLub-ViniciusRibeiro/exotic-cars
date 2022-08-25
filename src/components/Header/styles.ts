@@ -8,7 +8,7 @@ const HeaderContainer = styled.header`
     box-shadow: 0 10px 30px #D8D7D7;
     width: 100%;
     box-sizing: content-box;
-    padding: 10px 16px;
+    padding: 10px;
     box-sizing: border-box;
 
     & > div {
@@ -29,6 +29,10 @@ const HeaderContainer = styled.header`
         width: 100%;
         filter: invert(79%) sepia(1%) saturate(225%) hue-rotate(40deg) brightness(97%) contrast(102%);
         transition: all 0.2s;
+    }
+
+    @media screen and (min-width: 1100px) {
+        padding: 10px 80px;
     }
 `
 
