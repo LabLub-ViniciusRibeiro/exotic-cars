@@ -2,6 +2,8 @@ import { useState } from "react"
 import HeaderContainer, { SvgContainer } from "./styles"
 import filter from '../../assets/filter.svg'
 import Button from "../UI/Button";
+import InputGroup from "./InputGroup";
+import Input from "../UI/Input";
 
 function Header() {
 
@@ -18,9 +20,14 @@ function Header() {
                 <h1>EXOTIC</h1>
                 <h2>cars</h2>
             </div>
-            <div>
-                {screenWidth < breakpoint ? <SvgContainer><img src={filter} /></SvgContainer> : <input />}
-            </div>
+            {screenWidth < breakpoint ?
+                <SvgContainer><img src={filter} className='filter-icon' /></SvgContainer>
+                :
+                <InputGroup>
+                    <Input />
+                    <Input />
+                    <Input />
+                </InputGroup>}
             <div>
                 <Button title="Sign up" hasBorder={false} />
                 <Button title="Sign in" hasBorder={true} />
