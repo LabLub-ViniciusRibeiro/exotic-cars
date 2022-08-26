@@ -1,15 +1,10 @@
-import { GridList, Header } from '@Components/index'
-import CARS_DATA from '../../../CARS_DATA.json';
-import CarItem from '@Components/CarItem.tsx';
-import Car from 'shared/interfaces/Cart';
+import { Header } from '@Components/index'
+import { Outlet } from 'react-router-dom';
 function CarsDisplay() {
     return (
         <>
             <Header />
-            <GridList
-                data={CARS_DATA.cars as Car[]}
-                keyExtractor={item => item.id}
-                renderItem={item => <CarItem car={item} />} />
+            <Outlet />
         </>
     )
 }

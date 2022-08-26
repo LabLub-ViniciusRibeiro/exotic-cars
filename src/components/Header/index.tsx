@@ -2,6 +2,7 @@ import { useState } from "react"
 import HeaderContainer, { SvgContainer } from "./styles"
 import filter from '@Assets/filter.svg'
 import { Input, InputGroup, Button } from "@Components/index";
+import { Link } from "react-router-dom";
 
 function Header() {
 
@@ -14,10 +15,10 @@ function Header() {
 
     return (
         <HeaderContainer>
-            <div>
+            <Link to="/">
                 <h1>EXOTIC</h1>
                 <h2>cars</h2>
-            </div>
+            </Link>
             {screenWidth < breakpoint ?
                 <SvgContainer><img src={filter} className='filter-icon' /></SvgContainer>
                 :

@@ -11,18 +11,18 @@ const HeaderContainer = styled.header`
     padding: 10px;
     box-sizing: border-box;
     
-    & > div {
+    & > a {
         display: flex;
         align-items: center;
     }
     
-    & > div h1 {
+    & > a h1 {
         font-size: 1.6rem;
         font-weight: 600;
         margin-right: 4px;
         color: ${Colors.titleText};
     }
-    & > div h2 {
+    & > a h2 {
         font-weight: 400;
         color: ${Colors.titleText};
     }
