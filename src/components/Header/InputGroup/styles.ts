@@ -6,6 +6,8 @@ const InputGroupContainer = styled.div`
     height: 32px;
     border-radius: 10px;
     opacity: 59%;
+    display: flex;
+    align-items: center;
 `
 
 export default InputGroupContainer;

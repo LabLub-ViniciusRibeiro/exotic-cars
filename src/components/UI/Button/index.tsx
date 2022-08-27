@@ -1,16 +1,16 @@
-import { CSSProperties } from "react"
+import { CSSProperties, ReactNode } from "react"
 import ButtonContainer from "./styles"
 
 interface Props {
-    title: string,
     hasBorder: boolean,
-    style?: CSSProperties
+    style?: CSSProperties,
+    children: ReactNode
 }
 
-function Button({ title, hasBorder, style }: Props) {
+function Button({ children, hasBorder, style }: Props) {
     return (
         <ButtonContainer hasBorder={hasBorder} style={style}>
-            {title}
+            {children}
         </ButtonContainer>
     )
 }

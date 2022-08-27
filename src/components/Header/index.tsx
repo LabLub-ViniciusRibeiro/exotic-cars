@@ -28,8 +28,12 @@ function Header() {
                     <Input />
                 </InputGroup>}
             <div>
-                <Button title="Sign up" hasBorder={false} />
-                <Button title="Sign in" hasBorder={true} />
+                <Button hasBorder={false}>
+                    Sign up
+                </Button>
+                <Button hasBorder={true}>
+                    Sign in
+                </Button>
             </div>
         </HeaderContainer>
     )

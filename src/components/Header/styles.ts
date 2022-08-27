@@ -33,6 +33,10 @@ const HeaderContainer = styled.header`
         transition: all 0.2s;
     }
 
+    & > div {
+        display: flex;
+    }
+
     @media screen and (min-width: 700px) {
         padding: 20px 10px;
     }

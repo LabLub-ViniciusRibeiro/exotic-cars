@@ -1,7 +1,11 @@
+import CarInfo from "./CarInfo"
+import CarDetailsContainer from "./styles"
 
 function CarDetails() {
     return (
-        <div>CarDetails</div>
+        <CarDetailsContainer>
+            <CarInfo />
+        </CarDetailsContainer>
     )
 }
 
