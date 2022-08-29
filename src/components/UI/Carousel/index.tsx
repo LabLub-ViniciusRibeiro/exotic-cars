@@ -8,7 +8,7 @@ function getResponsiveOffset(): number {
     const windowWidth = window.innerWidth;
     switch (true) {
         case (windowWidth < 600):
-            return windowWidth / 3;
+            return windowWidth / 2.8;
         case (windowWidth >= 600 && windowWidth <= 900):
             return windowWidth / 2.5;
         case (windowWidth > 900):
@@ -19,12 +19,13 @@ function getResponsiveOffset(): number {
 }
 
 interface Props {
-    imgUrls: string[]
+    imgUrls: string[],
+    imgIndex: number,
+    setImgIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
-function Carousel({ imgUrls }: Props) {
+function Carousel({ imgUrls, imgIndex, setImgIndex }: Props) {
 
-    const [imgIndex, setImgIndex] = useState<number>(0);
     const [left, setLeft] = useState(initialLeftOffset);
     const ref = useRef<HTMLImageElement>(null);
 
@@ -32,6 +33,7 @@ function Carousel({ imgUrls }: Props) {
         if (imgIndex !== 0) {
             setImgIndex(indexValue => indexValue - 1);
             setLeft(value => value + (ref.current?.width as number + 50))
+            console.log(ref.current?.width)
         }
     }
 
@@ -39,6 +41,7 @@ function Carousel({ imgUrls }: Props) {
         if (imgIndex < imgUrls.length - 1) {
             setImgIndex(indexValue => indexValue + 1);
             setLeft(value => value - (ref.current?.width as number + 50))
+            console.log(ref.current?.width)
         }
     }
 
