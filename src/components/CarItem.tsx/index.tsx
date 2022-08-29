@@ -13,10 +13,8 @@ function CarItem({ car }: Props) {
         async function load() {
             const p = await import('../../assets/ferrari_PNG10674.png');
             setPic(p);
-            console.log(pic)
         }
     }, [])
-    console.log(car.picture)
     return (
         <CartItemContainer>
             <header>

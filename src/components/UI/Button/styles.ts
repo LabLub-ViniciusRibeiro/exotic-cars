@@ -2,7 +2,7 @@ import styled, { CSSProperties } from "styled-components";
 import Colors from "@Shared/Colors";
 
 interface Props {
-    hasBorder: boolean,
+    hasBorder?: boolean,
     style?: CSSProperties
 }
 const ButtonContainer = styled.button<Props>`
