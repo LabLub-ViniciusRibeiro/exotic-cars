@@ -1,16 +1,24 @@
 import ferrariPicture from '@Assets/ferrari.png'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CarInfoContainer from "./styles"
-import CARS_DATA from '../../../../CARS_DATA.json';
-import carPicture from '@Assets/ferrari_PNG10674.png'
 import Button from '@Components/UI/Button';
 import Colors from '@Shared/Colors';
 import { ArrowLeft } from 'phosphor-react'
 import { capitalizeFirstLetter } from 'shared/helpers/capitalizeFirstLetter';
+import Car from 'shared/interfaces/Car';
+import red from '@Assets/california-details-red.png'
+import silver from '@Assets/california-details-silver.png'
+import yellow from '@Assets/california-details-yellow.png'
 
-function CarInfo() {
-    const params = useParams();
-    const car = CARS_DATA.cars.find(car => car.id === parseInt(params.id as string));
+interface Props {
+    car: Car
+    index: number
+}
+
+const images = [yellow, red, silver];
+
+function CarInfo({ car, index }: Props) {
+
     return (
         <CarInfoContainer>
             <header>
@@ -30,10 +38,12 @@ function CarInfo() {
                     <ArrowLeft color={Colors.titleText} size={24} weight='thin' />
                     <Link to='/'>Back to catalog</Link>
                 </Button>
-                <img src={carPicture} />
+                <div className='car-img-container'>
+                    <img src={images[index]} />
+                </div>
                 <div>
-                    <h2>01</h2>
-                    <h3>{capitalizeFirstLetter(car?.color as string)}</h3>
+                    <h2>0{index + 1}</h2>
+                    <h3>{capitalizeFirstLetter(car.color)}</h3>
                 </div>
             </div>
         </CarInfoContainer>

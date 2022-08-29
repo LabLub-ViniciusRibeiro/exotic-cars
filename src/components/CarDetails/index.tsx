@@ -1,20 +1,28 @@
 import Carousel from "@Components/UI/Carousel"
 import Colors from "@Shared/Colors"
 import { ArrowRight } from "phosphor-react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { Button } from ".."
+import CARS_DATA from '../../../CARS_DATA.json'
 import CarInfo from "./CarInfo"
 import CarDetailsContainer from "./styles"
-import ferrari from '@Assets/ferrari_PNG10674.png'
-import bugatti from '@Assets/bugatti.png'
-import porsche from '@Assets/porsche.png'
+import red from '@Assets/california-details-red.png'
+import silver from '@Assets/california-details-silver.png'
+import yellow from '@Assets/california-details-yellow.png'
+import Car from "shared/interfaces/Car"
+import { useState } from "react"
 
-const images = [ferrari, bugatti, porsche];
+const images = [yellow, red, silver];
 
 function CarDetails() {
+    const params = useParams();
+    const car = CARS_DATA.cars.find(car => car.id === parseInt(params.id as string));
+    const cars = CARS_DATA.cars.filter(carItem => carItem.model === car?.model);
+    const [imgIndex, setImgIndex] = useState<number>(0);
+
     return (
         <CarDetailsContainer>
-            <CarInfo />
+            <CarInfo car={cars[imgIndex] as Car} index={imgIndex} />
             <Button
                 style={{
                     borderRadius: '20px', background: Colors.titleText,
@@ -24,7 +32,7 @@ function CarDetails() {
                 <Link to=''>Book now</Link>
                 <ArrowRight color={'white'} size={24} weight='thin' />
             </Button>
-            <Carousel imgUrls={images} />
+            <Carousel imgUrls={images} setImgIndex={setImgIndex} imgIndex={imgIndex} />
         </CarDetailsContainer>
     )
 }

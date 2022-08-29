@@ -31,6 +31,7 @@ const CarouselContainer = styled.div<Props>`
         left: ${props => `${props.left}px`};
         transition: all ease-in-out 0.5s;
         background: ${Colors.iconColor};
+        cursor: pointer;
         width: 80px;
         height: 80px;
         overflow: visible;

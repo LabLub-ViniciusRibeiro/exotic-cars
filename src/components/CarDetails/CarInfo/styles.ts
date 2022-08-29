@@ -1,4 +1,3 @@
-import ButtonContainer from "@Components/UI/Button/styles";
 import Colors from "@Shared/Colors";
 import styled from "styled-components";
 
@@ -32,12 +31,14 @@ const CarInfoContainer = styled.div`
         font-size: 1.4rem;
         color: ${Colors.titleText};
         text-align: center;
+        text-align: left;
     }
     
     h2 {
         font-weight: 700;
         font-size: 2rem;
         text-align: center;
+        text-align: left;
     }
 
     & > div {
@@ -49,8 +50,14 @@ const CarInfoContainer = styled.div`
         gap: 20px;
     }
 
-    & > div > img {
-        width: 80%
+    .car-img-container {
+        text-align: center;
+        width: 80%;
+        height: 150px;
+    }
+
+    & > div > div > img {
+        width: 100%;
     }
 
     & > div > button {
@@ -72,6 +79,11 @@ const CarInfoContainer = styled.div`
         align-items: flex-start;
     }
 
+    .car-img-container {
+        text-align: center;
+        width: 60%;
+    }
+
     & > div {
         padding: 30px 0;
         flex-direction: row;
@@ -82,14 +94,13 @@ const CarInfoContainer = styled.div`
     }
 
     & > div > div {
-        align-self: baseline;
+        align-self: flex-start;
+        text-align: left;
     }
     }
 
     @media screen and (min-width: 900px) {
-        & > div > img {
-        width: 60%
-    }
+    
         & > div {
            padding: 20px 6% 20px 30px;
            justify-content: space-around;
@@ -99,6 +110,12 @@ const CarInfoContainer = styled.div`
             min-width: 180px;
             width: 15%;
         }
+
+        .car-img-container {
+        text-align: center;
+        width: 70%;
+        height: 300px;
+    }
     }
 `
 export default CarInfoContainer

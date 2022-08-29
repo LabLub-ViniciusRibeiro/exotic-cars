@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Car from "shared/interfaces/Cart"
+import Car from "shared/interfaces/Car"
 import CartItemContainer from "./styles"
 import picture from '../../assets/ferrari_PNG10674.png'
 

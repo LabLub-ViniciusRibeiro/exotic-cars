@@ -33,7 +33,6 @@ function Carousel({ imgUrls, imgIndex, setImgIndex }: Props) {
         if (imgIndex !== 0) {
             setImgIndex(indexValue => indexValue - 1);
             setLeft(value => value + (ref.current?.width as number + 50))
-            console.log(ref.current?.width)
         }
     }
 
@@ -41,8 +40,22 @@ function Carousel({ imgUrls, imgIndex, setImgIndex }: Props) {
         if (imgIndex < imgUrls.length - 1) {
             setImgIndex(indexValue => indexValue + 1);
             setLeft(value => value - (ref.current?.width as number + 50))
-            console.log(ref.current?.width)
         }
+    }
+
+    function handleClick(index: number) {
+        if (index > imgIndex) {
+            for (let i = 0; i < (index - imgIndex); i++) {
+                setLeft(value => value - (ref.current?.width as number + 50))
+            }
+        }
+
+        if (imgIndex > index) {
+            for (let i = 0; i < (imgIndex - index); i++) {
+                setLeft(value => value + (ref.current?.width as number + 50))
+            }
+        }
+        setImgIndex(index);
     }
 
     return (
@@ -51,7 +64,8 @@ function Carousel({ imgUrls, imgIndex, setImgIndex }: Props) {
             <div>
                 {imgUrls.map((img, index) => {
                     return (
-                        <div className={index === imgIndex ? `active` : ''} key={index}>
+                        <div className={index === imgIndex ? `active` : ''} key={index}
+                            onClick={() => handleClick(index)}>
                             <img src={img} ref={ref} />
                         </div>
                     )
