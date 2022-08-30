@@ -3,12 +3,16 @@ import ModalContainer from "./styles"
 
 interface Props {
     children: ReactNode,
-    onHide: React.MouseEventHandler<HTMLDivElement> | undefined
+    onHide: React.MouseEventHandler<HTMLDivElement> | undefined,
+    left: string,
+    top: string
 }
 
-function Modal({ children, onHide }: Props) {
+function Modal({ children, onHide, left, top }: Props) {
     return (
-        <ModalContainer onClick={onHide} className='modal'>{children}</ModalContainer>
+        <ModalContainer onClick={onHide} className='modal' left={left} top={top}>
+            {children}
+        </ModalContainer>
     )
 }
 

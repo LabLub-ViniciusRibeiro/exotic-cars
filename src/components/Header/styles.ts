@@ -46,7 +46,7 @@ const HeaderContainer = styled.header`
     }
 `
 
-export const SvgContainer = styled.div`
+export const SvgContainer = styled.div<{isActive: boolean}>`
     background: ${Colors.inputBackground};
     padding: 5px;
     border-radius: 100%;
@@ -54,6 +54,11 @@ export const SvgContainer = styled.div`
     align-items: center;
     cursor: pointer;
 
+    .filter-icon {
+        filter: ${props => props.isActive && 
+        'invert(56%) sepia(15%) saturate(1779%) hue-rotate(196deg) brightness(97%) contrast(97%)'};
+    }
+    
     &:hover .filter-icon{
         filter: invert(56%) sepia(15%) saturate(1779%) hue-rotate(196deg) brightness(97%) contrast(97%);
     }

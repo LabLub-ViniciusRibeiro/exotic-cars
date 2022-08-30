@@ -17,6 +17,7 @@ function Header() {
 
     const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
     const [showModal, setShowModal] = useState<boolean>(false);
+    const [showInputGroup, setShowInputGroup] = useState<boolean>(false);
     const breakpoint = 860;
     const [date, setDate] = useState<Range[]>([{
         startDate: new Date(),
@@ -43,23 +44,65 @@ function Header() {
         setDate([item.selection]);
     }
 
+    function handleShowInputGroup() {
+        setShowInputGroup(prev => !prev);
+    }
+
     return (
-        <HeaderContainer>
-            <Link to="/">
-                <h1>EXOTIC</h1>
-                <h2>cars</h2>
-            </Link>
-            {screenWidth < breakpoint ?
-                <SvgContainer><img src={filter} className='filter-icon' /></SvgContainer>
-                :
-                <InputGroup>
+        <>
+            <HeaderContainer>
+                <Link to="/">
+                    <h1>EXOTIC</h1>
+                    <h2>cars</h2>
+                </Link>
+                {screenWidth < breakpoint ?
+                    <SvgContainer onClick={handleShowInputGroup} isActive={showInputGroup}>
+                        <img src={filter} className='filter-icon' />
+                    </SvgContainer>
+                    :
+                    <InputGroup direction="row">
+                        <Input icon={location} type='text' />
+                        <Input icon={calendar} type='date' onClick={handleShowModal}
+                            value={formatDate(date[0].startDate as Date)} />
+                        <Input icon={calendar} type='date' onClick={handleShowModal}
+                            value={formatDate(date[0].endDate as Date)} />
+                        {showModal && ReactDOM.createPortal(
+                            <Modal onHide={handleCloseModal} left={'40vw'} top={'50px'}>
+                                <DateRange
+                                    ranges={date}
+                                    editableDateInputs={true}
+                                    onChange={handleChangeRange}
+                                    moveRangeOnFirstSelection={false}
+                                    className='date' />
+                            </Modal>,
+                            document.getElementById('modal') as HTMLElement)}
+                        <Button style={{
+                            background: 'white', borderRadius: '100%', width: '30px', height: '30px',
+                            minWidth: '10px'
+                        }}>
+                            <MagnifyingGlass size={18} weight="bold" />
+                        </Button>
+                    </InputGroup>}
+                <div>
+                    <Button hasBorder={false}>
+                        Sign up
+                    </Button>
+                    <Button hasBorder={true}>
+                        Sign in
+                    </Button>
+                </div>
+            </HeaderContainer>
+            {showInputGroup &&
+                <InputGroup direction="column">
                     <Input icon={location} type='text' />
-                    <Input icon={calendar} type='date' onClick={handleShowModal}
-                        value={formatDate(date[0].startDate as Date)} />
-                    <Input icon={calendar} type='date' onClick={handleShowModal}
-                        value={formatDate(date[0].endDate as Date)} />
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <Input icon={calendar} type='date' onClick={handleShowModal}
+                            value={formatDate(date[0].startDate as Date)} />
+                        <Input icon={calendar} type='date' onClick={handleShowModal}
+                            value={formatDate(date[0].endDate as Date)} />
+                    </div>
                     {showModal && ReactDOM.createPortal(
-                        <Modal onHide={handleCloseModal}>
+                        <Modal onHide={handleCloseModal} left={'7vw'} top={'150px'}>
                             <DateRange
                                 ranges={date}
                                 editableDateInputs={true}
@@ -74,16 +117,9 @@ function Header() {
                     }}>
                         <MagnifyingGlass size={18} weight="bold" />
                     </Button>
-                </InputGroup>}
-            <div>
-                <Button hasBorder={false}>
-                    Sign up
-                </Button>
-                <Button hasBorder={true}>
-                    Sign in
-                </Button>
-            </div>
-        </HeaderContainer>
+                </InputGroup>
+            }
+        </>
     )
 }
 

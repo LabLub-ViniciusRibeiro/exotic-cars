@@ -2,12 +2,13 @@ import { ReactNode } from "react"
 import InputGroupContainer from "./styles"
 
 interface Props {
-    children: ReactNode
+    children: ReactNode,
+    direction: 'row' | 'column'
 }
 
-function InputGroup({ children }: Props) {
+function InputGroup({ children, direction }: Props) {
     return (
-        <InputGroupContainer>
+        <InputGroupContainer direction={direction}>
             {children}
         </InputGroupContainer>
     )

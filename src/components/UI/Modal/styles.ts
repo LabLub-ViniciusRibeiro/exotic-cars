@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
-const ModalContainer = styled.div`
+interface Props {
+    left: string,
+    top: string
+}
+
+const ModalContainer = styled.div<Props>`
     width: 95vw;
     height: 95vh;
     box-sizing: content-box;
     background: transparent;
     position: absolute;
+    z-index: 30;
 
     .date {
         position: absolute;
-        left: 40vw;
-        top: 50px;
+        left: ${props => props.left};
+        top: ${props => props.top};
         z-index: 100;
     }
 `
