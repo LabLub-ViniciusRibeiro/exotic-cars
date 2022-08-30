@@ -1,9 +1,15 @@
+import { InputHTMLAttributes } from "react"
 import InputContainer from "./styles"
 
-function Input() {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
+    icon: string
+}
+
+function Input({ icon, ...rest }: Props) {
     return (
         <InputContainer>
-            <input />
+            <img src={icon} />
+            <input {...rest} />
         </InputContainer>
     )
 }

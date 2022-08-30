@@ -6,7 +6,8 @@ const Colors = {
     buttonBackground: '#313136',
     detailsBackground: '#D8D7D7',
     iconColor: '#C4C4C4',
-    titleText: '#313136'
+    titleText: '#313136',
+    inputText: '#656469'
 }
 
 export default Colors;
