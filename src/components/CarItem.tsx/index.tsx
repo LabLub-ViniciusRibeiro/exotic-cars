@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react"
 import Car from "shared/interfaces/Car"
 import CartItemContainer from "./styles"
-import picture from '../../assets/ferrari_PNG10674.png'
+import axios from 'axios'
 
 interface Props {
     car: Car
 }
 function CarItem({ car }: Props) {
     const [pic, setPic] = useState<any>();
+    console.log(pic)
     useEffect(() => {
         load();
         async function load() {
-            const p = await import('../../assets/ferrari_PNG10674.png');
+            const p = await axios.get('https://github.com/LabLub-ViniciusRibeiro/exotic-cars/blob/main/src/assets/ferrari_PNG10674.png');
             setPic(p);
         }
     }, [])
@@ -22,7 +23,7 @@ function CarItem({ car }: Props) {
                 <p>...</p>
             </header>
             <h3>{car.model.toUpperCase()}</h3>
-            <img src={picture} />
+            <img src={pic} />
             <div>
                 <h4>$</h4>
                 <h2>{car.rent_price}</h2>
