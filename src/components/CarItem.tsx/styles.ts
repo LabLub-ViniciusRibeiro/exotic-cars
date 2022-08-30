@@ -7,7 +7,6 @@ const CartItemContainer = styled.li`
     border-radius: 10px;
     color: ${Colors.titleText};
     cursor: pointer;
-    transition: all 1s;
 
     header {
         display: flex;
@@ -52,9 +51,7 @@ const CartItemContainer = styled.li`
 
     &:hover {
         position: relative;
-        bottom: 5px;
-        right: 5px;
-        box-shadow: 2px 2px 10px ${Colors.accent};
+        animation: card 0.5s forwards;
     }
 
     &:active {
@@ -64,6 +61,20 @@ const CartItemContainer = styled.li`
         background: linear-gradient(315deg, #cacaca, ${Colors.carItemBackground});
         box-shadow:  none;
     }
+
+    @keyframes card {
+  from {
+    bottom: 0;
+    right: 0;
+    box-shadow: none;
+  }
+
+  to {
+    bottom: 5px;
+    right: 5px;
+    box-shadow: 2px 2px 10px ${Colors.accent};
+  }
+}
 `
 
 export default CartItemContainer;
